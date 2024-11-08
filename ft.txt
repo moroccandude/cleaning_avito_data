@@ -1,0 +1,65 @@
+Catalogue des Annonces Immobilières
+
+## Introduction
+
+Ce projet consiste à analyser un ensemble d'annonces immobilières extraites de sites web tels qu'Avito, portant sur des appartements à louer et à vendre. Le but est d'explorer et d'analyser des informations telles que le *prix, la **localisation, la **surface, et d'autres caractéristiques des biens immobiliers. Ce catalogue est destiné à des fins éducatives, afin d'apprendre à manipuler des données de type **DataFrame* et à en tirer des conclusions utiles pour les analystes de données ou les étudiants en statistiques.
+
+Les informations incluent des colonnes telles que *Titre, **Localisation, **Prix, **Chambres, **Surface*, etc., qui peuvent être utilisées pour effectuer des analyses statistiques, des visualisations de données, et des études de marché.
+
+---
+
+## Description des Colonnes
+
+Le *DataFrame* contient les informations suivantes pour chaque annonce immobilière :
+
+- *Titre* : Le titre de l'annonce immobilière (ex : "Appartement à louer").
+- *Localisation* : La ville ou le quartier où se trouve le bien immobilier.
+- *Prix* : Le prix de la location ou de la vente, généralement en dirhams (ex : "11 000 DH").
+- *Chambres* : Le nombre de chambres dans l'appartement.
+- *Douches* : Le nombre de douches ou de salles de bain.
+- *Surface* : La surface habitable du bien immobilier en mètres carrés (ex : 70 m²).
+- *Type* : Le type de bien (par exemple, "Appartement", "Location de vacances").
+- *Secteur* : Le quartier ou la zone géographique du bien (par exemple, "Souissi", "Agdal").
+- *Salons* : Le nombre de salons dans l'appartement.
+- *Etage* : L'étage auquel l'appartement est situé (ex : 1er étage).
+- *Âge_bien* : L'âge de l'appartement ou du bien immobilier.
+- *URL* : Un lien vers l'annonce complète en ligne pour plus de détails.
+
+---
+
+## Exemple des Données
+
+Voici quelques exemples d'annonces immobilières disponibles dans notre *DataFrame* :
+
+| *Titre*                                                                            | *Localisation* | *Prix*        | *Chambres* | *Douches* | *Surface* | *Type*                    | *Secteur*       | *Salons* | *Etage* | *Âge_bien* | *URL*                                                                                                      |
+|--------------------------------------------------------------------------------------|------------------|-----------------|--------------|-------------|-------------|-----------------------------|-------------------|------------|-----------|--------------|--------------------------------------------------------------------------------------------------------------|
+| Appartement à louer sur Souissi Orangeraie                                           | Rabat            | 11 000 DH       | 1            | 1           | 70          | Appartements, à louer        | Souissi           | 1          | 2         | NaN          | [Voir l'annonce](https://www.avito.ma/fr/souissi/appartements/Appartement_%C3%A0_louer_sur_Souissi_Orangeraie_55557966.htm) |
+| Appartement meublé à louer sur l'Agdal                                                | Rabat            | 9 500 DH        | 2            | 2           | 100         | Appartements, à louer        | Agdal             | 1          | 3         | NaN          | [Voir l'annonce](https://www.avito.ma/fr/agdal/appartements/Appartement_meubl%C3%A9_%C3%A0_louer_sur_l_Agdal_55648139.htm) |
+| Appartement à louer par jour                                                         | Fès              | 300 DH /Nuit    | 5            | 2           | NaN         | Locations de vacances, à louer | Autre secteur     | NaN        | NaN       | NaN          | [Voir l'annonce](https://www.avito.ma/fr/autre_secteur/locations_de_vacances/appartement_a_louer_par_jour__54653378.htm) |
+| Appartement au Taghazout Bay                                                         | Taghazout        | PRIX NON SPÉCIFIÉ | 2            | NaN         | NaN         | Locations de vacances, à louer | Toute la ville    | NaN        | NaN       | NaN          | [Voir l'annonce](https://www.avito.ma/fr/taghazout/locations_de_vacances/Appartement_au_Taghazout_Bay_50859998.htm) |
+| Appartement de 112 m² Agdal                                                          | Fès              | 250 DH /Nuit    | NaN          | NaN         | NaN         | Locations de vacances, à louer | Agdal             | NaN        | NaN       | NaN          | [Voir l'annonce](https://www.avito.ma/fr/agdal/locations_de_vacances/Appartement_de_112_m2_Agdal_29169634.htm) |
+| RAK-GU-1118 - Appartement à vendre à Issil                                           | Marrakech        | 980 000 DH      | 3            | 2           | 115         | Appartements, à vendre       | Issil             | NaN        | 1         | NaN          | [Voir l'annonce](https://www.avito.ma/fr/issil/appartements/RAK_GU_1118___Appartement_%C3%A0_vendre_%C3%A0_Issil_55486494.htm) |
+| Appartement meublé Fille 100m Beauséjour                                             | Casablanca       | 5 500 DH        | 2            | 2           | 100         | Appartements, à louer        | Beauséjour        | 2          | 4         | NaN          | [Voir l'annonce](https://www.avito.ma/fr/beaus%C3%A9jour/appartements/Appartement_meubl%C3%A9_Fille_100m_Beaus%C3%A9jour_49158265.htm) |
+| Coquet appartement meublé LAYA                                                       | Casablanca       | 8 000 DH        | 2            | 2           | 100         | Appartements, à louer        | Ferme Bretone     | 1          | 1         | NaN          | [Voir l'annonce](https://www.avito.ma/fr/ferme_bretone/appartements/Coquet_appartement_meubl%C3%A9_LAYA__55638938.htm) |
+| Joli appartement vide 115m² à louer à Californie                                      | Casablanca       | 5 000 DH        | 3            | 2           | 115         | Appartements, à louer        | Californie        | 1          | 3         | NaN          | [Voir l'annonce](https://www.avito.ma/fr/californie/appartements/joli_appartement_vide115m%C2%B2_a_louer_a_Californie____55625517.htm) |
+| App avec ascenseur et WiFi, proche de la mer Anza                                    | Agadir           | 300 DH /Nuit    | 5            | 3           | NaN         | Locations de vacances, à louer | Anza              | NaN        | NaN       | NaN          | [Voir l'annonce](https://www.avito.ma/fr/anza/locations_de_vacances/App_avec_ascenseur_et_WiFi__proche_de_la_mer_anza_50760244.htm) |
+| Appartement meublé 100 m² sur Oulfa                                                  | Casablanca       | 4 000 DH        | 2            | 1           | 100         | Appartements, à louer        | Oulfa             | 1          | 3         | NaN          | [Voir l'annonce](https://www.avito.ma/fr/oulfa/appartements/Appartement_meubl%C3%A9_100_m%C2%B2_sur_Oulfa_55746149.htm) |
+| Appartement à vendre 185 m² à Kénitra                                               | Kénitra          | 1 300 000 DH    | 3            | 1           | 185         | Appartements, à vendre       | Mimosas           | 1          | 8         | 11-20 ans    | [Voir l'annonce](https://www.avito.ma/fr/mimosas/appartements/Appartement_%C3%A0_vendre_185_m%C2%B2_%C3%A0_K%C3%A9nitra_55642876.htm) |
+
+---
+
+## Analyse des Données
+
+### Prix moyen des appartements
+Une analyse des prix des appartements permet de déterminer les tendances générales sur le marché. Par exemple :
+- Les prix de *location* varient de 300 DH à 11 000 DH par mois.
+- Les prix de *vente* peuvent atteindre 1 300 000 DH.
+
+### Superficie et type de bien
+Les superficies des appartements vont de *70 m²* à *185 m²*. Cette variation influence directement le prix de l'appartement.
+
+---
+
+## Conclusion
+
+Ce catalogue éducatif des annonces immobilières permet d'analyser les *prix, la **superficie*, et d'autres variables clés des appartements proposés à la location ou à la vente.
